@@ -3,7 +3,7 @@
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 set nu
-set foldmethod=marker
+set foldmethod=syntax
 syntax on
 
 set esckeys                     " allow usage of curs keys within insert mode

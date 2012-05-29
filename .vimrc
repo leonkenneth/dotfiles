@@ -3,7 +3,8 @@
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 set nu
-set foldmethod=syntax
+set foldmethod=marker
+set autoindent
 syntax on
 
 set esckeys                     " allow usage of curs keys within insert mode
@@ -63,7 +64,10 @@ set winminheight=0              " Minimum height of VIM's windows opened
 set mouse=h
 set mousefocus
 set wrapmargin=0
+set nobackup
 set nowritebackup
+set noswapfile
+set colorcolumn=80
 set foldmethod=marker
 
 set cpoptions-=C                " enable commands that continue on the next line

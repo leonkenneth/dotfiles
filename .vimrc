@@ -5,7 +5,6 @@ set backspace=indent,eol,start  " more powerful backspacing
 set nu
 set foldmethod=marker
 set autoindent
-syntax on
 
 set esckeys                     " allow usage of curs keys within insert mode
 set listchars=eol:\ ,tab:\%\ ,trail:-,extends:>,precedes:<
@@ -24,7 +23,7 @@ set laststatus=2                " show status line?  Yes, always!
 set noruler                       " show cursor position?  Yep!
 set statusline=<\ %f\ %r%y\ %=\ %l,%c%V\ \ %P\ >
 
-set shiftwidth=4                " Number of spaces to use for each insertion of
+set shiftwidth=2                " Number of spaces to use for each insertion of
                                 " (auto)indent.
 set shortmess=at                " Kind of messages to show.   Abbreviate them all!
                                 " New since vim-5.0v: flag 'I' to suppress "intro message".
@@ -36,8 +35,8 @@ set showmode                    " Show the current mode?  YEEEEEEEEESSSSSSSSSSS!
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.cmi,.cmo
                                 " Suffixes to ignore in file completion
 
-set tabstop=4                   " tabstop
-set softtabstop=4               " sts
+set tabstop=2                   " tabstop
+set softtabstop=2               " sts
 set expandtab                 " expand tabs
 set notextmode                  " no - I am using Vim on UNIX!
 set textwidth=0                 " Don't wrap words by default
@@ -94,4 +93,15 @@ exe "set path=." . system("echo | cpp -v 2>&1 | grep '^ .*/include' | tr -d \"\n
 
 " }}}
 
+" Pathogen
+call pathogen#infect()
 
+" Autoopen NERDTree
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+syntax on
+
+
+set encoding=utf-8
+set fileencoding=utf-8
